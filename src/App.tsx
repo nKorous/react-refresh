@@ -2,9 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { Button } from '@material-ui/core'
 
+interface BookList {
+  title: string;
+  author: string;
+  publisher?: string;
+  numPages: number;
+  dateStarted: Date;
+  dateFinished: Date;
+  rating: 1 | 2 | 3 | 4 | 5
+}
 
 function App() {
-  const [ list, setList ] = useState<Array<any>>()
+  const [ list, setList ] = useState<Array<BookList>>()
   const [ user, setUser ] = useState<string | null>(null)
   const [ loggedIn, setUserLoggedIn ] = useState<boolean>(false)
 
@@ -21,6 +30,10 @@ function App() {
     setUser(null)
   }
 
+  const addBook = () => {
+    
+  }
+
   return (
     <div className="App">
       <div className='topbar'>
@@ -34,7 +47,7 @@ function App() {
 
         { loggedIn &&
           <div>
-
+            
           </div>   
         }
       </div>
